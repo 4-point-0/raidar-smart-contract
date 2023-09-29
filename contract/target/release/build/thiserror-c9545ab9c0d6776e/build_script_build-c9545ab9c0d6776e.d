@@ -1,0 +1,5 @@
+/Users/andrej/Web3-Development/near/projects/raidar-smart-contract/contract/target/release/build/thiserror-c9545ab9c0d6776e/build_script_build-c9545ab9c0d6776e: /Users/andrej/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-1.0.38/build.rs
+
+/Users/andrej/Web3-Development/near/projects/raidar-smart-contract/contract/target/release/build/thiserror-c9545ab9c0d6776e/build_script_build-c9545ab9c0d6776e.d: /Users/andrej/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-1.0.38/build.rs
+
+/Users/andrej/.cargo/registry/src/index.crates.io-6f17d22bba15001f/thiserror-1.0.38/build.rs:

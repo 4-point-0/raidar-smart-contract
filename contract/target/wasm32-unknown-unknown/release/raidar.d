@@ -1,0 +1,1 @@
+/Users/andrej/Web3-Development/near/projects/raidar-smart-contract/contract/target/wasm32-unknown-unknown/release/raidar.wasm: /Users/andrej/Web3-Development/near/projects/raidar-smart-contract/contract/src/lib.rs

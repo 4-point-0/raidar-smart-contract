@@ -1,0 +1,3 @@
+cargo:rerun-if-changed=build/main.rs
+cargo:rustc-env=TYPENUM_BUILD_CONSTS=/Users/andrej/Web3-Development/near/projects/raidar-smart-contract/contract/target/debug/build/typenum-ae266bb20c1c0bd6/out/consts.rs
+cargo:rustc-env=TYPENUM_BUILD_OP=/Users/andrej/Web3-Development/near/projects/raidar-smart-contract/contract/target/debug/build/typenum-ae266bb20c1c0bd6/out/op.rs

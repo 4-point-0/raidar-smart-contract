@@ -177,6 +177,44 @@ impl Contract {
     }
 
     #[payable]
+    pub fn buy_for_user(&mut self, token_id: &TokenId, account_id: &AccountId) -> TokenMetadata {
+        Self::require_owner();
+
+        let _token = self.tokens.get(token_id).expect("Token not found");
+
+        let metadata = self.internal_as_nft_metadata(token_id.clone());
+
+        //get the set of tokens for the given account
+        let tokens_set = self
+            .tokens_per_owner
+            .get(&account_id)
+            .unwrap_or("".to_string());
+
+        // check if tokens_set is empty string and create a vector of tokens
+        let mut ids = if tokens_set == "" {
+            vec![]
+        } else {
+            tokens_set.split(":").collect::<Vec<&str>>()
+        };
+
+        //we insert the token ID into the set
+        ids.push(&token_id);
+
+        self.tokens_per_owner.insert(&account_id, &ids.join(":"));
+
+        let actual_token_id = format!("{}:{}", account_id.clone(), token_id.clone());
+
+        NftMint {
+            owner_id: &account_id,
+            token_ids: &[actual_token_id.as_ref()],
+            memo: None,
+        }
+        .emit();
+
+        metadata
+    }
+
+    #[payable]
     pub fn buy_nft(&mut self, token_id: &TokenId) -> TokenMetadata {
         let initial_storage_usage = env::storage_usage();
         let attached_deposit = env::attached_deposit();
